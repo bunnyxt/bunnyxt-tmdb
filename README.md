@@ -2,13 +2,14 @@
 
 ## Introduction
 
-This project is the third homework of USC CSCI-571 2021 Spring Session. In this project, students are required to build a film database webside powered by [TMDB](https://www.themoviedb.org/) api. According to the instructions, students must implement several backend APIs via Node.js and SPA frontend via AngularJS. Finally, the project is deployed to Azure cloud platform. This repo contains my submission of this homework, which could be access at [https://bunnyxt-tmdb.azurewebsites.net](https://bunnyxt-tmdb.azurewebsites.net).
+This project is built for the third homework of USC CSCI-571 2021 Spring Session. In this homework, students are required to build a film database webside powered by [TMDB](https://www.themoviedb.org/) API. According to the instructions, students must implement several backend APIs via Node.js and SPA frontend via AngularJS. Finally, the website should be deployed to the cloud platform. This repository contains my submission of this homework, which could be access at [https://bunnyxt-tmdb.azurewebsites.net](https://bunnyxt-tmdb.azurewebsites.net).
 
 ## Features
 
-- Built Single Page Application (SPA) based on AngularJS with TypeScript.
+- Built responsive Single Page Application (SPA) based on AngularJS with TypeScript.
 - Via the frontend, users can browse latest trending films and tv shows, search items via keywords, check detailed info page, etc.
-- Implemented Continue Watching list via localStorage.
+- Implemented Continue Watching list via localStorage, which will store visited pages.
+- Constructed watchlist via localStorage, which will contains films or tvs marked by users.
 - Developed Node.js backend with Express web application framework.
 - The backend works as a proxy, which means that it would receive requests from frontend, then repost request with API_KEY to TMDB API, receive response from TMDB, then return back to frontend.
 - Deployed the project to Azure, URL: [https://bunnyxt-tmdb.azurewebsites.net](https://bunnyxt-tmdb.azurewebsites.net).
