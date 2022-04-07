@@ -1,0 +1,15 @@
+<div [style.padding]="isMobile ? '0 12px' : '0 150px'">
+  <div *ngIf="mylist.length === 0" style="text-align: center; color: white; padding-top: 60px">
+    <h1>No items found in Watchlist.</h1>
+  </div>
+  <div *ngIf="mylist.length > 0" style="padding-top: 20px">
+    <h1>My Watchlist</h1>
+    <div class="row" style="margin-top: 40px">
+      <div *ngFor="let item of mylist" class="col-sm-12 col-md-2">
+        <div style="margin-bottom: 80px">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

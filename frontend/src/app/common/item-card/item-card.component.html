@@ -1,0 +1,18 @@
+<div class="item-card-wrapper">
+  <div class="item-card" (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+    <a
+      [routerLink]="['/watch/' + category, item.id]"
+      rel="nofollow noopener noreferrer"
+    >
+      <img
+        [src]="item.poster_path ? item.poster_path : '/assets/img/movie_placeholder.png'"
+        [alt]="'Poster image of ' + category + ' ' + item[{ movie: 'title', tv: 'name' }[category]] + '.'"
+      >
+    </a>
+    <div class="item-title" *ngIf="isMobile || showInfo">
+      <div>
+        {{ item[{ movie: 'title', tv: 'name' }[category]] }}
+      </div>
+    </div>
+  </div>
+</div>

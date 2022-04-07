@@ -1,0 +1,14 @@
+input {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0;
+  border-radius: 0;
+  border-bottom: 2px solid lightgray;
+}
+::ng-deep .dropdown-menu {
+  background-color: #040625;
+  border: 1px solid white;
+}
+::ng-deep .input {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+

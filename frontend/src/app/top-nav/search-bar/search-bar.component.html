@@ -1,0 +1,8 @@
+<ng-template #rt let-r="result" let-t="term">
+  <div style="color: white" [routerLink]="['/watch/' + r.media_type, r.id]" (click)="reset()">
+    <img [src]="r.backdrop_path" style="width: 80px; margin-right: 12px" alt="backdrop image">
+    <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+  </div>
+</ng-template>
+
+<input type="text" class="form-control bg-transparent" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Search" [resultTemplate]="rt"/>

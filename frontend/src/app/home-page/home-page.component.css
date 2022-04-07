@@ -1,0 +1,12 @@
+#main-carousel {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.home-page-block {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.home-page-block h1 {
+  /*padding-left: 4%;*/
+  margin-bottom: 20px;
+}

@@ -1,0 +1,9 @@
+<ngb-carousel #carousel interval="0">
+  <ng-template ngbSlide *ngFor="let moviesGroup of moviesGroups">
+    <div class="row" style="margin: 20px 0 56px 0; padding: 0 5%">
+      <div class="col-sm-12 col-md-2" *ngFor="let movie of moviesGroup">
+        <app-movie-card [movie]="movie"></app-movie-card>
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>

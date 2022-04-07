@@ -1,0 +1,82 @@
+<div style="color: rgb(165,167,181)" [style.padding]="isMobile ? '0 12px' : '0 150px'">
+  <div *ngIf="info" class="row" style="margin-top: 40px; margin-bottom: 20px">
+    <div class="col-sm-12 col-md-8">
+      <youtube-player [videoId]="videoId" width="100%" [height]="isMobile ? '200px' : undefined" ></youtube-player>
+    </div>
+    <div class="col-sm-12 col-md-4">
+      <h1 *ngIf="category === 'movie'" style="font-size: 48px; color: white">{{ info?.title }}</h1>
+      <h1 *ngIf="category === 'tv'" style="font-size: 48px; color: white">{{ info?.name }}</h1>
+      <p style="font-size: 22px; font-weight: lighter"><i>{{ info?.tagline }}</i></p>
+      <div style="margin-bottom: 12px; font-size: 22px">
+        <span *ngIf="category === 'movie'">{{ info?.release_date?.substring(0, 4) }} | </span>
+        <span *ngIf="category === 'tv'">{{ info?.first_air_date?.substring(0, 4) }} | </span>
+        <span>✭ {{ info?.vote_average }} | </span>
+        <span *ngIf="category === 'movie'">{{ formatRuntime(info?.runtime) }}</span>
+        <span *ngIf="category === 'tv'">{{ formatRuntime(calcSum(info?.episode_run_time)) }}</span>
+      </div>
+      <div style="margin-bottom: 20px; line-height: 28px">
+        <div>
+          <span style="color: white">Genres : </span>
+          <span style="font-size: 18px">{{ genresNameStr }}</span>
+        </div>
+        <div>
+          <span style="color: white;">Spoken Languages : </span>
+          <span style="font-size: 18px">{{ spokenLanguagesNameStr }}</span>
+        </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="onAddToWatchlistButtonClick()" style="margin-bottom: 20px">
+        {{ addedInMyList ? 'Remove from' : 'Add to' }} Watchlist
+      </button>
+      <ngb-alert
+        #selfClosingAlert
+        *ngIf="showAddToWatchlistAlert"
+        [type]="addToWatchlistAlertType"
+        (closed)="onAddToWatchlistAlertTypeCloseButtonClick()"
+      >{{ addToWatchlistAlertType === 'success' ? 'Added to' : 'Removed from' }} Watchlist.</ngb-alert>
+    </div>
+  </div>
+  <div *ngIf="info" class="detail-page-block" style="margin-bottom: 28px" [style.paddingLeft]="isMobile ? '0' : '12px'">
+    <h5 style="color: white">Description</h5>
+    <div style="font-size: 18px; line-height: 28px">{{ info?.overview }}</div>
+  </div>
+  <div *ngIf="info" class="detail-page-block" style="margin-bottom: 28px" [style.paddingLeft]="isMobile ? '0' : '12px'">
+    <h5 style="color: white">Share</h5>
+    <div>
+      <a
+        [href]="'https://twitter.com/intent/tweet?text=' + encodeURI('Watch ' + info[{ movie: 'title', tv: 'name' }[category]] + '\nhttps://www.youtube.com/watch?v=' + videoId + '\n#USC #CSCI571 #FightOn')"
+        target="_blank"
+        style="color: rgb(28, 162, 241); margin-right: 12px"
+      >
+        <i class="fab fa-twitter share-button"></i>
+      </a>
+      <a
+        [href]="'https://facebook.com/sharer/sharer.php?u=' + encodeURI('https://www.youtube.com/watch?v=' + videoId)"
+        target="_blank"
+        style="color: rgb(26, 118, 242)"
+      >
+        <i class="fab fa-facebook-square share-button"></i>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="casts && casts.length > 0" class="detail-page-block">
+    <h1>Full Cast and Crew</h1>
+    <div style="padding-left: 20px">
+      <app-cast-display-section [casts]="casts" ></app-cast-display-section>
+    </div>
+  </div>
+  <div *ngIf="reviews && reviews.length > 0" class="detail-page-block">
+    <h1>Reviews<span style="color: gray; margin-left: 28px">{{ reviews ? reviews.length : 0 }}</span></h1>
+    <div style="padding-left: 28px">
+      <app-review-display-section [reviews]="reviews"></app-review-display-section>
+    </div>
+  </div>
+  <div *ngIf="recommendations" class="detail-page-block">
+    <h1>Recommended {{ category.toUpperCase().substring(0, 1) + category.substring(1) }}s</h1>
+    <app-items-display-section [items]="recommendations"></app-items-display-section>
+  </div>
+  <div *ngIf="similar" class="detail-page-block">
+    <h1>Similar {{ category.toUpperCase().substring(0, 1) + category.substring(1) }}s</h1>
+    <app-items-display-section [items]="similar"></app-items-display-section>
+  </div>
+
+</div>

@@ -1,0 +1,31 @@
+<div class="home-page-block" style="margin-top: 16px" [style.padding]="isMobile ? '0 20px' : '0 80px'">
+  <app-currently-playing-movies-carousel></app-currently-playing-movies-carousel>
+</div>
+<div class="home-page-block" *ngIf="continueWatching.length > 0">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Continue Watching</h1>
+  <app-items-display-section [items]="continueWatching"></app-items-display-section>
+</div>
+<div class="home-page-block" *ngIf="popularMovies">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Popular Movies</h1>
+  <app-items-display-section [items]="popularMovies"></app-items-display-section>
+</div>
+<div class="home-page-block" *ngIf="topRatedMovies">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Top Rated Movies</h1>
+  <app-items-display-section [items]="topRatedMovies"></app-items-display-section>
+</div>
+<div class="home-page-block" *ngIf="trendingMovies">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Trending Movies</h1>
+  <app-items-display-section [items]="trendingMovies"></app-items-display-section>
+</div>
+<div class="home-page-block" *ngIf="popularTvs">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Popular Tv Shows</h1>
+  <app-items-display-section [items]="popularTvs"></app-items-display-section>
+</div>
+<div class="home-page-block" *ngIf="topRatedTvs">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Top Rated Tv Shows</h1>
+  <app-items-display-section [items]="topRatedTvs"></app-items-display-section>
+</div>
+<div class="home-page-block" *ngIf="trendingTvs">
+  <h1 [style.paddingLeft]="isMobile ? '40px' : '4%'">Trending Tv Shows</h1>
+  <app-items-display-section [items]="trendingTvs"></app-items-display-section>
+</div>

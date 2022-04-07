@@ -1,0 +1,43 @@
+::ng-deep .card {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+::ng-deep .card-img-top {
+  border: none;
+  border-radius: 20px 20px 0 0;
+}
+.cast-info {
+  padding: 12px;
+  color: black;
+}
+.cast-info div {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 14px;
+}
+.cast-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.cast-as {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.cast-character {
+}
+.external-link-button {
+  font-size: 32px;
+}
+::ng-deep .modal-dialog {
+  max-width: 800px;
+}
+::ng-deep .modal-body {
+  max-height: calc(100vh - 16px - 69px - 2px);
+  overflow-y: scroll;
+}
+::ng-deep .popover {
+  color: rgba(0, 0, 0, 0.65);
+}

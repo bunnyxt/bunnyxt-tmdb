@@ -1,0 +1,11 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+  - url: /
+    static_files: dist/familytime/index.html
+    upload: dist/familytime/index.html
+
+  - url: /
+    static_dir: dist/familytime

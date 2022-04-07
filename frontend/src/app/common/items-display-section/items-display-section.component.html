@@ -1,0 +1,11 @@
+<div [style.padding]="isMobile ? '0 8px' : '0'">
+  <ngb-carousel #carousel interval="0" [showNavigationIndicators]="!isMobile">
+    <ng-template ngbSlide *ngFor="let itemsGroup of itemsGroups">
+      <div class="row items-display-row" [style.margin]="isMobile ? '20px 0 24px 0' : '20px 0 64px 0'">
+        <div class="col-sm-12 col-md-2" *ngFor="let item of itemsGroup">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

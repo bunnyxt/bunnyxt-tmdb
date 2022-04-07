@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-md">
+  <a class="navbar-brand active" [routerLink]="'/'">USC Films</a>
+  <button class="navbar-toggler" type="button" (click)="navbarCollapsed = !navbarCollapsed" [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [ngbCollapse]="navbarCollapsed" id="navbarSupportedContent" style="text-align: right;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/mylist'" [routerLinkActive]="['active']">My List</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-md-0">
+      <app-search-bar></app-search-bar>
+    </form>
+  </div>
+</nav>

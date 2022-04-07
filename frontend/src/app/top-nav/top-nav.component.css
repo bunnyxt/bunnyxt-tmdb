@@ -1,0 +1,19 @@
+nav {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 40px;
+}
+a {
+  color: rgb(118, 128, 140);
+}
+a:hover {
+  color: rgb(175, 180, 196);
+}
+a.active, a.active:hover {
+  color: lightgray;
+}
+.navbar-toggler {
+  border-color: rgb(10, 27, 50);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(127, 138, 155)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}

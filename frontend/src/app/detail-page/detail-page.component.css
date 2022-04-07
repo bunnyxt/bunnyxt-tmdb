@@ -1,0 +1,12 @@
+.detail-page-block {
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+.detail-page-block h1 {
+  padding-left: 4%;
+  margin-bottom: 20px;
+  color: white;
+}
+.share-button {
+  font-size: 32px;
+}

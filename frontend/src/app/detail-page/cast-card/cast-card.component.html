@@ -1,0 +1,71 @@
+<div class="card" style="width: 200px" (click)="open(content)">
+  <img class="card-img-top" [src]="cast.profile_path" alt="Profile image of cast" width="200" height="300">
+  <div class="card-body cast-info" style="text-align: center; overflow: hidden">
+    <div class="cast-name">{{ cast.name }}</div>
+    <div class="cast-as">AS</div>
+    <div class="cast-character">{{ cast.character }}</div>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title" style="color: black">{{ detail?.name }}</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row" style="margin-bottom: 20px">
+      <img class="col-sm-12 col-md-3" [src]="cast.profile_path" alt="Profile image of cast" width="100%" height="100%">
+      <div class="col-sm-12 col-md-9">
+        <div style="font-size: 15px; color: rgba(0, 0, 0, 0.65); margin-bottom: 28px">
+          <div>Birth: {{ detail?.birthday }}</div>
+          <div>Birth Place: {{ detail?.place_of_birth }}</div>
+          <div>Gender: {{ { '0': 'Undefined', '1': 'Female', '2': 'Male', '3': 'Non-binary' }[+detail?.gender] }}</div>
+          <div *ngIf="detail?.homepage">Website: {{ detail.homepage }}</div>
+          <div>Known for: {{ detail?.known_for_department }}</div>
+          <div>Also known as: {{ detail?.also_known_as.join(', ') }}</div>
+        </div>
+        <div>
+          <a
+            *ngIf="externalIds?.imdb_id"
+            [href]="'https://www.imdb.com/name/' + externalIds.imdb_id"
+            target="_blank"
+            style="color: rgb(230, 184, 1); margin-right: 10px"
+          >
+            <i class="fab fa-imdb external-link-button" placement="top" triggers="mouseenter:mouseleave" ngbPopover="Visit IMDB"></i>
+          </a>
+          <a
+            *ngIf="externalIds?.instagram_id"
+            [href]="'https://www.instagram.com/' + externalIds.instagram_id"
+            target="_blank"
+            style="color: rgb(110, 48, 116); margin-right: 10px"
+          >
+            <i class="fab fa-instagram external-link-button" placement="top" triggers="mouseenter:mouseleave" ngbPopover="Visit Instagram"></i>
+          </a>
+          <a
+            *ngIf="externalIds?.facebook_id"
+            [href]="'https://www.facebook.com/' + externalIds.facebook_id"
+            title="Visit Facebook"
+            target="_blank"
+            style="color: rgb(26, 118, 242); margin-right: 10px"
+          >
+            <i class="fab fa-facebook-square external-link-button" placement="top" triggers="mouseenter:mouseleave" ngbPopover="Visit Facebook"></i>
+          </a>
+          <a
+            *ngIf="externalIds?.twitter_id"
+            [href]="'https://www.twitter.com/' + externalIds.twitter_id"
+            title="Visit Twitter"
+            target="_blank"
+            style="color: rgb(28, 162, 241)"
+          >
+            <i class="fab fa-twitter external-link-button" placement="top" triggers="mouseenter:mouseleave" ngbPopover="Visit Twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="color: black">Biography</h3>
+      <p style="font-size: 15px; color: rgba(0, 0, 0, 0.65)">{{ detail?.biography }}</p>
+    </div>
+  </div>
+</ng-template>

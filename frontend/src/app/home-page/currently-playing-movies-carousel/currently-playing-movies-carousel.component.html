@@ -1,0 +1,27 @@
+<ngb-carousel #carousel [interval]="5000" [pauseOnHover]="true" [pauseOnFocus]="true" [showNavigationIndicators]="!isMobile">
+  <ng-template ngbSlide *ngFor="let movie of movies">
+    <a
+      [routerLink]="['/watch/movie', movie.id]"
+      rel="nofollow noopener noreferrer"
+      (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()"
+    >
+      <div style="max-height: 420px; overflow: hidden">
+        <img
+          [class.active]="showInfo"
+          [src]="movie.backdrop_path"
+          [alt]="'Backdrop image of movie ' + movie.title + '.'"
+          width="100%"
+        >
+      </div>
+      <div class="movie-title" *ngIf="isMobile || showInfo">
+        <div
+          [style.bottom]="isMobile ? '12px' : '40px'"
+          [style.left]="isMobile ? '20px' : '40px'"
+        >
+          {{ movie.title }}
+        </div>
+      </div>
+    </a>
+  </ng-template>
+</ngb-carousel>
