@@ -82,7 +82,7 @@ cd backend
 az webapp up --name bunnyxt-tmdb
 ```
 
-What's more, to provide `API_KEY` environment variable to Azure, please refer [https://medium.com/bb-tutorials-and-thoughts/how-to-pass-environment-variables-in-nodejs-azure-functions-4713a9cb3f16](How To Pass Environment Variables In Serverless NodeJS Azure Functions), go to `Settings -> Configuration -> Application settings`, add new application setting with name `API_KEY` and your API KEY string as value.
+What's more, to provide `API_KEY` environment variable to Azure, please refer [How To Pass Environment Variables In Serverless NodeJS Azure Functions](https://medium.com/bb-tutorials-and-thoughts/how-to-pass-environment-variables-in-nodejs-azure-functions-4713a9cb3f16) this article, go to `Settings -> Configuration -> Application settings`, add new application setting with name `API_KEY` and your API KEY string as value.
 
 After all, you can visit [https://bunnyxt-tmdb.azurewebsites.net/](https://bunnyxt-tmdb.azurewebsites.net/) to see the website. Deploy success!
 
