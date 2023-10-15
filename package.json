@@ -1,0 +1,8 @@
+{
+  "name": "bunnyxt-tmdb",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node ./backend/app.js",
+    "heroku-prebuild": "cd frontend && npm install && npm run build && cd ../backend && npm install && cp -r ../frontend/dist ."
+  }
+}
