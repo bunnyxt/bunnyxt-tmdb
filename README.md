@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is built for the third homework of USC CSCI-571 2021 Spring Session. In this homework, students are required to build a film database webside powered by [TMDB](https://www.themoviedb.org/) API. According to the instructions, students must implement several backend APIs via Node.js and SPA frontend via AngularJS. Finally, the website should be deployed to the cloud platform. This repository contains my submission of this homework, which could be access at [https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com](https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com).
+This project is built for the third homework of USC CSCI-571 2021 Spring Session. In this homework, students are required to build a film database webside powered by [TMDB](https://www.themoviedb.org/) API. According to the instructions, students must implement several backend APIs via Node.js and SPA frontend via AngularJS. Finally, the website should be deployed to the cloud platform. This repository contains my submission of this homework, which could be access at [https://tmdb.bunnyxt.com](https://tmdb.bunnyxt.com).
 
 ## Features
 
@@ -12,7 +12,7 @@ This project is built for the third homework of USC CSCI-571 2021 Spring Session
 - Constructed watchlist via localStorage, which will contains films or tvs marked by users.
 - Developed Node.js backend with Express web application framework.
 - The backend works as a proxy, which means that it would receive requests from frontend, then repost request with API_KEY to TMDB API, receive response from TMDB, then return back to frontend.
-- Deployed the project to Heroku, URL: [https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com](https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com).
+- Deployed the project to Heroku, URL: [https://tmdb.bunnyxt.com](https://tmdb.bunnyxt.com).
 
 ## Development
 
@@ -80,7 +80,7 @@ The backend will use `backend/dist/bunnyxt-tmdb-frontend` as built frontend page
    1. Set `NPM_CONFIG_PRODUCTION` to `false`. This is to enable Heroku to install devDependencies during building process.
    2. Set `API_KEY` to the TMDB API KEY fetched before.
 
-After all, you can visit [https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com](https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com) to see the website. Deploy success!
+After all, you can visit [https://tmdb.bunnyxt.com](https://tmdb.bunnyxt.com) to see the website. Deploy success!
 
 ## Disclaimer
 
