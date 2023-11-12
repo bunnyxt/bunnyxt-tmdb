@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This project is built for the third homework of USC CSCI-571 2021 Spring Session. In this homework, students are required to build a film database webside powered by [TMDB](https://www.themoviedb.org/) API. According to the instructions, students must implement several backend APIs via Node.js and SPA frontend via AngularJS. Finally, the website should be deployed to the cloud platform. This repository contains my submission of this homework, which could be access at [https://bunnyxt-tmdb.azurewebsites.net](https://bunnyxt-tmdb.azurewebsites.net).
+This project is built for the third homework of USC CSCI-571 2021 Spring Session. In this homework, students are required to build a film database webside powered by [TMDB](https://www.themoviedb.org/) API. According to the instructions, students must implement several backend APIs via Node.js and SPA frontend via AngularJS. Finally, the website should be deployed to the cloud platform. This repository contains my submission of this homework, which could be access at [https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com](https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com).
 
 ## Features
 
@@ -12,7 +12,7 @@ This project is built for the third homework of USC CSCI-571 2021 Spring Session
 - Constructed watchlist via localStorage, which will contains films or tvs marked by users.
 - Developed Node.js backend with Express web application framework.
 - The backend works as a proxy, which means that it would receive requests from frontend, then repost request with API_KEY to TMDB API, receive response from TMDB, then return back to frontend.
-- Deployed the project to Azure, URL: [https://bunnyxt-tmdb.azurewebsites.net](https://bunnyxt-tmdb.azurewebsites.net).
+- Deployed the project to Heroku, URL: [https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com](https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com).
 
 ## Development
 
@@ -70,27 +70,21 @@ After a while, the built frontend code would be stored in `frontend/dist` folder
 cd backend && cp -r ../frontend/dist .
 ```
 
-The backend will use `backend/dist/bunnyxt-tmdb-frontend` as built frontend paage resource. When you visit the root page of the backend service, the browser will display frontend content.
+The backend will use `backend/dist/bunnyxt-tmdb-frontend` as built frontend page resource. When you visit the root page of the backend service, the browser will display frontend content.
 
-### Step 3: Deploy to Azure
+### Step 3: Deploy to Heroku
 
-Register an Azure account first, then refer [Create a Node.js web app in Azure](https://docs.microsoft.com/en-us/azure/app-service/quickstart-nodejs?pivots=development-environment-cli&tabs=linux) tutorial to upload all content in the `backend` folder, then start server.
+1. Create a [new Heroku app](https://dashboard.heroku.com/new-app), then push project code for deployment.
+   1. Personally, I would recommend to connect the Heroku app to GitHub repo, then enable auto deployment from main branch.
+2. Set up config vars. Go to Heroku app dashboard, switch to 'Settings' tab, then click 'Reveal Config Vars' button.
+   1. Set `NPM_CONFIG_PRODUCTION` to `false`. This is to enable Heroku to install devDependencies during building process.
+   2. Set `API_KEY` to the TMDB API KEY fetched before.
 
-In my deployment, I created an app called `bunnyxt-tmdb`. Then, I can use command line interface to deploy. Of course, I need to download this command line interface and login first.
-
-```shell
-cd backend
-az webapp up --name bunnyxt-tmdb
-```
-
-What's more, to provide `API_KEY` environment variable to Azure, please refer [How To Pass Environment Variables In Serverless NodeJS Azure Functions](https://medium.com/bb-tutorials-and-thoughts/how-to-pass-environment-variables-in-nodejs-azure-functions-4713a9cb3f16) this article, go to `Settings -> Configuration -> Application settings`, add new application setting with name `API_KEY` and your API KEY string as value.
-
-After all, you can visit [https://bunnyxt-tmdb.azurewebsites.net/](https://bunnyxt-tmdb.azurewebsites.net/) to see the website. Deploy success!
+After all, you can visit [https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com](https://bunnyxt-tmdb-f6573ad0e0f4.herokuapp.com) to see the website. Deploy success!
 
 ## Disclaimer
 
-- This is just a naive implement and only call TMDB API at low frequency. It only obtains public accessible data (no personal info or paid content collected and distributed). DO NOT ABUSE TMDB API!!! 
+- This is just a naive implement and only call TMDB API at low frequency. It only obtains public accessible data (no personal info or paid content collected and distributed). DO NOT ABUSE TMDB API!!!
 - GitHub Repo: [bunnyxt/bunnyxt-tmdb](https://github.com/bunnyxt/bunnyxt-tmdb)
 - Author: [bunnyxt](https://github.com/bunnyxt)
 - License: [MIT](LICENSE)
-
