@@ -558,6 +558,11 @@ app.get('/api/persons/:id/external_ids', (req, res) => {
     });
 })
 
+// Fallback for all other routes, navigate to index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/bunnyxt-tmdb-frontend', 'index.html'));
+})
+
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
