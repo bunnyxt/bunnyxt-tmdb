@@ -6,6 +6,7 @@
     "heroku-prebuild": "cd frontend && npm install && npm run build && cd ../backend && npm install && cp -r ../frontend/dist ."
   },
   "engines": {
-    "node": "16"
+    "node": "14",
+    "npm": "6"
   }
 }
